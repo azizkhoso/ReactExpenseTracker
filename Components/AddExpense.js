@@ -29,22 +29,31 @@ export default class AddExpense extends React.Component {
   };
   render() {
     return (
-      <>
+      <div width="100%">
+        <label width="20%">Expense Title: </label>
         <input
           type="text"
           value={this.state.expenseName}
           onChange={(e) => this.handleNameChange(e)}
           placeholder="Expense Title"
+          width="20%"
         />
+        <label width="20%">Cost: </label>
         <input
           type="number"
           value={this.state.costValue}
           onChange={(e) => this.handleCostChange(e)}
+          placeholder="Cost"
+          width="20%"
         />
-        <button type="button" onClick={() => this.submitNewExpense()}>
+        <button
+          width="20%"
+          type="button"
+          onClick={() => this.submitNewExpense()}
+        >
           Add
         </button>
-      </>
+      </div>
     );
   }
 }

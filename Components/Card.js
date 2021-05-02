@@ -29,7 +29,7 @@ export default function Card(props) {
           margin: "2px"
         }}
       >
-        {props.amount}
+        {"$" + props.amount}
       </p>
     </div>
   );
