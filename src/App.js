@@ -9,9 +9,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      totalBalance: 5000,
+      totalBalance: 500,
       totalSpent: 50,
-      remainingBalance: 4950,
+      remainingBalance: 450,
       expenses: [
         {
           id: 1,
@@ -80,60 +80,43 @@ export default class App extends React.Component {
   };
   render() {
     return (
-      <div className="App">
-        <table width="100%">
-          <h1 width="100%">Expense Tracker</h1>
-          <tbody>
-            <tr id="cards">
-              <td width="33%">
-                <Card
-                  cardText="Total Balance"
-                  amount={this.state.totalBalance}
-                  backgroundColor="lightgreen"
-                />
-              </td>
-              <td width="33%">
-                <Card
-                  cardText="Remaining Balance"
-                  amount={this.state.remainingBalance}
-                  backgroundColor="yellow"
-                />
-              </td>
-              <td width="33%">
-                <Card
-                  cardText="Spent amount"
-                  amount={this.state.totalSpent}
-                  backgroundColor="lightblue"
-                />
-              </td>
-            </tr>
-
-            <tr id="addBalance">
-              <td>Total Balance</td>
-              <td colSpan="2">
-                <input
-                  type="number"
-                  value={this.state.totalBalance}
-                  onChange={(e) => this.handleBalanceChange(e)}
-                />
-              </td>
-            </tr>
-            <tr id="addExpenses" width="100%">
-              <td colSpan="3">
-                <AddExpense addNewExpense={this.addNewExpense} />
-              </td>
-            </tr>
-            <tr>
-              <td>Expense Title</td>
-              <td>{"Cost($)"}</td>
-              <td>Remove</td>
-            </tr>
-            <ExpensesList
-              list={this.state.expenses}
-              removeExpense={this.removeExpense}
+      <div className="w3-container">
+        <h1 className="w3-center w3-teal w3-row" width="100%">
+          Expense Tracker
+        </h1>
+        <div className="w3-row w3-section">
+          <Card
+            cardText="Total Balance"
+            amount={this.state.totalBalance}
+            backgroundColor="w3-light-green"
+          />
+          <Card
+            cardText="Remaining Balance"
+            amount={this.state.remainingBalance}
+            backgroundColor="w3-lime"
+          />
+          <Card
+            cardText="Spent amount"
+            amount={this.state.totalSpent}
+            backgroundColor="w3-orange"
+          />
+        </div>
+        <div className="w3-section w3-row" id="addBalance">
+          <div className="w3-col-3">Total Balance</div>
+          <div className="w3-rest">
+            <input
+              className="w3-input w3-border"
+              type="number"
+              value={this.state.totalBalance}
+              onChange={(e) => this.handleBalanceChange(e)}
             />
-          </tbody>
-        </table>
+          </div>
+        </div>
+        <AddExpense addNewExpense={this.addNewExpense} />
+        <ExpensesList
+          list={this.state.expenses}
+          removeExpense={this.removeExpense}
+        />
       </div>
     );
   }

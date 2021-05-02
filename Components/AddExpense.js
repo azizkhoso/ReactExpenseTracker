@@ -29,25 +29,30 @@ export default class AddExpense extends React.Component {
   };
   render() {
     return (
-      <div width="100%">
-        <label width="20%">Expense Title: </label>
-        <input
-          type="text"
-          value={this.state.expenseName}
-          onChange={(e) => this.handleNameChange(e)}
-          placeholder="Expense Title"
-          width="20%"
-        />
-        <label width="20%">Cost: </label>
-        <input
-          type="number"
-          value={this.state.costValue}
-          onChange={(e) => this.handleCostChange(e)}
-          placeholder="Cost"
-          width="20%"
-        />
+      <div className="w3-section w3-cell-row">
+        <div className="w3-cell w3-half">
+          Expense Title:
+          <input
+            className="w3-input w3-border"
+            type="text"
+            value={this.state.expenseName}
+            onChange={(e) => this.handleNameChange(e)}
+            placeholder="Expense Title"
+          />
+        </div>
+        <div className="w3-cell w3-quarter">
+          <label>Cost: </label>
+          <input
+            className="w3-input w3-border"
+            type="number"
+            value={this.state.costValue}
+            onChange={(e) => this.handleCostChange(e)}
+            placeholder="Cost"
+          />
+        </div>
+        <br />
         <button
-          width="20%"
+          className="w3-button w3-green w3-quarter"
           type="button"
           onClick={() => this.submitNewExpense()}
         >

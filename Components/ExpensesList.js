@@ -1,6 +1,11 @@
 export default function ExpensesList(props) {
   return (
-    <>
+    <table className="w3-table-all w3-hoverable">
+      <tr>
+        <th>Expense Title</th>
+        <th>{"Cost($)"}</th>
+        <th>Remove</th>
+      </tr>
       {props.list.map((expense) => {
         return (
           <tr>
@@ -8,6 +13,7 @@ export default function ExpensesList(props) {
             <td>{expense.cost}</td>
             <td>
               <button
+                className="w3-button w3-red"
                 type="button"
                 onClick={() => props.removeExpense(expense.id)}
               >
@@ -17,6 +23,6 @@ export default function ExpensesList(props) {
           </tr>
         );
       })}
-    </>
+    </table>
   );
 }
